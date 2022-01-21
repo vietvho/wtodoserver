@@ -1,0 +1,17 @@
+{
+  "name": "wtodoserver",
+  "version": "1.0.0",
+  "description": "todo server",
+  "main": "app.js",
+  "author": "warren nguyen",
+  "license": "MIT",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.7"
+  }
+}
