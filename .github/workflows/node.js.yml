@@ -27,8 +27,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
 
     - name: build website
-      run: \[ -d wtodoserver/.git \] && cd wtodoserver && git reset --hard && git pull || git clone  git@github.com:vietvho/wtodoserver.git
-      working-directory: /home/warren/wtodoserver
+      run: \[ -d wtodoserver/.git \] && cd wtodoserver && git reset --hard && git pull || git clone  git@github.com:vietvho/wtodoserver.git wtodoserver
+      # working-directory: /home/warren/wtodoserver
     - run: git checkout main
     - run: npm install yarn
     - run: yarn install
