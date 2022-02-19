@@ -18,6 +18,7 @@ jobs:
       matrix:
         node-version: [14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+        working-directory: /home/warren/wtodoserver
 
     steps:
     # - uses: actions/checkout@v2
@@ -30,8 +31,12 @@ jobs:
       run: \[ -d wtodoserver/.git \] && cd wtodoserver && git reset --hard && git pull || git clone  git@github.com:vietvho/wtodoserver.git wtodoserver
       working-directory: /home/warren
     - run: git checkout main
-      working-directory: /home/warren/wtodoserver
+      working-directory: ${{ matrix.working-directory }}
     - run: npm install yarn
+      working-directory: ${{ matrix.working-directory }}
     - run: yarn install
+      working-directory: ${{ matrix.working-directory }}
     - run: yarn upgrade
-    - run: yarn start   
+      working-directory: ${{ matrix.working-directory }}
+    -  run: yarn start
+      working-directory: ${{ matrix.working-directory }}
