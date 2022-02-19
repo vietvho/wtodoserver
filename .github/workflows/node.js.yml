@@ -11,11 +11,12 @@ on:
 
 jobs:
   build:
+
     runs-on: self-hosted
+
     strategy:
       matrix:
         node-version: [14.x]
-        working-directory: /home/warren/wtodoserver
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -29,13 +30,9 @@ jobs:
       run: \[ -d wtodoserver/.git \] && cd wtodoserver && git reset --hard && git pull || git clone  git@github.com:vietvho/wtodoserver.git wtodoserver
       working-directory: /home/warren
     - name: compile
-      working-directory: ${{ matrix.working-directory }}
       run: git checkout main
-    - run: npm install yarn
-      working-directory: ${{ matrix.working-directory }}
-    - run: yarn install
-      working-directory: ${{ matrix.working-directory }}
-    - run: yarn upgrade
-      working-directory: ${{ matrix.working-directory }}
-    -  run: yarn start
-      working-directory: ${{ matrix.working-directory }}
+      working-directory: /home/warren/wtodoserver
+      run: npm install yarn
+      run: yarn install
+      run: yarn upgrade
+      run: yarn start   
