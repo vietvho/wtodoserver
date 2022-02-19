@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: wtodoserver
+    runs-on: babyshopqn
 
     strategy:
       matrix:
