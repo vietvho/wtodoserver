@@ -3,6 +3,9 @@
 
 name: wtodoserver CI
 
+variables:
+  working-directory: /home/warren/wtodoserver
+
 on:
   push:
     branches: [ main ]
@@ -17,9 +20,6 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
-    
-    evn:
-      working-directory: /home/warren/wtodoserver
 
     steps:
     # - uses: actions/checkout@v2
@@ -34,7 +34,7 @@ jobs:
     - run: git checkout main
       working-directory: /home/warren/wtodoserver
     - run: npm install yarn
-      working-directory: ${{ env.working-directory }}
+      working-directory: ${{ working-directory }}
     - run: yarn install
     - run: yarn upgrade
     - run: yarn start   
