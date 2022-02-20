@@ -34,7 +34,7 @@ jobs:
     - run: git checkout main
       working-directory: /home/warren/wtodoserver
     - run: npm install yarn
-      working-directory: ${{ working-directory }}
+      working-directory: ${{ env.working-directory }}
     - run: yarn install
     - run: yarn upgrade
     - run: yarn start   
