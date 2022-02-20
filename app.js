@@ -13,6 +13,7 @@ let db = mongoose.connection;
 db.on('open',()=>{
     console.log('DB connect');
 });
+
 app = express();
 app.use(express.json());
 app.use(cookieParser());
