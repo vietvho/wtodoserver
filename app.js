@@ -11,7 +11,7 @@ mongoose.connect('mongodb://localhost/wtodo', {
 );
 let db = mongoose.connection;
 db.on('open',()=>{
-    console.log('DB connect');
+    // console.log('DB connect');
 });
 app = express();
 app.use(express.json());
