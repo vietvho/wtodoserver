@@ -17,8 +17,9 @@ jobs:
     strategy:
       matrix:
         node-version: [14.x]
-
-    working-directory: /home/warren/wtodoserver
+    
+    evn:
+      working-directory: /home/warren/wtodoserver
 
     steps:
     # - uses: actions/checkout@v2
