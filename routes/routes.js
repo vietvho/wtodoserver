@@ -146,7 +146,7 @@ router.post('/tasks',async(req,res) => {
             return res.send({message: "unauthenticated",state: "verified!"});
         }
 
-        const result = await Todo.update(
+        const result = await Todo.updateMany(
             //query
             {userID: verified._id},
             //set
