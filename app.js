@@ -22,4 +22,4 @@ app.use(cors({
     origin: ['http://localhost:8000','http://localhost:8080','http://localhost:8081','http://wtodo.test','https://wtodo.test','http://wtodo.ga','https://wtodo.ga']
 }));
 app.use('/api',routes);
-app.listen(8000);
+app.listen(8000,()=>{console.log('server started')});
