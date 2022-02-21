@@ -36,5 +36,5 @@ jobs:
       working-directory: /home/warren/wtodoserver
     - run: yarn upgrade
       working-directory: /home/warren/wtodoserver
-    - run: yarn start
+    - run: yarn start  & yarn wait-on http://localhost:8000
       working-directory: /home/warren/wtodoserver
